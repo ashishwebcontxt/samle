@@ -13,7 +13,7 @@ function App() {
         const buttonArray = Array?.from(buttons);
         buttonArray?.forEach((button) => {
           button.addEventListener('click', () => {
-            firstIframe.contentWindow.postMessage('Hello receiver', '*');
+            firstIframe.contentWindow.postMessage('Hello receiver', 'https://event.godreamcast.com');
           });
         });
       // };
