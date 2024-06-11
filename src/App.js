@@ -24,7 +24,7 @@ function App() {
 
   return (
     <div className="App">
-      <button className="main-menu__wrapper-inner'">Register for event</button>
+      <button className="main-menu__wrapper-inner">Register for event</button>
       <div>
         <div>
           <div>
