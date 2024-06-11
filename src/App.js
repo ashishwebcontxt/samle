@@ -6,33 +6,25 @@ function App() {
 
   useEffect(() => {
     setTimeout(() => {
-
       var iframes = document.getElementsByTagName('iframe');
-
       var firstIframe = iframes[0];
-
-      var btn = document.getElementsByClassName("123");
       // firstIframe.onload = function () {
-    console.log("@@@@@@@",firstIframe)
-        
-        const buttons = document?.getElementsByClassName('123');
+        const buttons = document?.getElementsByClassName('main-menu__wrapper-inner');
         const buttonArray = Array?.from(buttons);
-        console.log(iframes)
         buttonArray?.forEach((button) => {
           button.addEventListener('click', () => {
-            console.log("@@@@@@")
-            firstIframe.contentWindow.postMessage('Hello from parent', 'https://event.godreamcast.com');
+            firstIframe.contentWindow.postMessage('Hello receiver', '*');
           });
         });
       // };
-    }, 1000);
+    }, 500);
 
   }, []);
 
 
   return (
     <div className="App">
-      <button className="123">Register for event</button>
+      <button className="main-menu__wrapper-inner'">Register for event</button>
       <div>
         <div>
           <div>
