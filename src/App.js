@@ -5,31 +5,31 @@ import { useEffect } from 'react';
 function App() {
 
   useEffect(() => {
-    setTimeout(() => {
-      var iframes = document.getElementsByTagName('iframe');
-      var firstIframe = iframes[0];
-      // firstIframe.onload = function () {
-        const buttons = document?.getElementsByClassName('main-menu__wrapper-inner');
-        const buttonArray = Array?.from(buttons);
-        buttonArray?.forEach((button) => {
-          button.addEventListener('click', () => {
-            firstIframe.contentWindow.postMessage('Hello receiver', 'https://event.godreamcast.com');
-          });
-        });
-      // };
-    }, 500);
+    // Define the onbeforeunload event handler
+    const handleBeforeUnload = () => {
+      const iframe = document.getElementById('childIframe');
+      if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage('parentReloaded', 'https://event.godreamcast.com');
+      }
+    };
 
+    // Attach the event handler
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    // Cleanup function to remove the event handler
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
   }, []);
 
 
   return (
     <div className="App">
-      <button className="main-menu__wrapper-inner">Register for event</button>
       <div>
         <div>
           <div>
-            <iframe src="https://event.godreamcast.com/diy/4e413d3d-event-name" width='100%' height="400"
-              frameBorder='0' ></iframe>
+            <iframe id="childIframe" src="https://event.godreamcast.com/dev/gjdh22-form-check" width='100%' height="400"
+              frameBorder='0'></iframe>
           </div>
         </div>
       </div>
