@@ -28,7 +28,7 @@ function App() {
       <div>
         <div>
           <div>
-            <iframe src="https://event.godreamcast.com/diy/gjdh5f-ttes/gjdi7q" width='100%' height="400"
+            <iframe src="https://event.godreamcast.com/diy/gjdh22-form-check" width='100%' height="400"
               frameBorder='0' ></iframe>
           </div>
         </div>
